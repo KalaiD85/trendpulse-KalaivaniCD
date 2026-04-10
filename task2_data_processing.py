@@ -54,6 +54,6 @@ def Save_to_CSV(df):
         print(f"  {cat:<15} {count}")
 
 if __name__ == "__main__":
-    df = Load_JSON_File("trends_20260409")
+    df = Load_JSON_File("trends_20260410")
     df = Clean_the_Data(df)
     Save_to_CSV(df)

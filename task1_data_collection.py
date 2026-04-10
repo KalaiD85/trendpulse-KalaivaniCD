@@ -103,8 +103,8 @@ def Make_the_API_Calls_to_Extract_Fields():
         for sid in story_ids:
             # this count is not workinng to extract exact 25 story/category other than 
             # technology and entertainment, hence planned to add few unmatched category 
-            #if count >= 25:
-               # break
+            if count >= 25:
+                break
             story = fetch_story_details(sid)
             if story and "title" in story:
                 cat = categorize_story(story["title"])            
@@ -119,7 +119,7 @@ def Make_the_API_Calls_to_Extract_Fields():
                         }
                 if category == cat:
                     grouped[cat].append(item)
-                   # count += 1
+                    count += 1
                 else:
                     unmatched_stories.append(item)
         # Sleep once per category loop
